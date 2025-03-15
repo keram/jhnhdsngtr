@@ -1,84 +1,384 @@
 /* Mobile-First Accessible Styles */
 :root {
-    /* Define default light mode colors */
-    --background-color: #ffffff;
-    --text-color: #000000;
-    --link-color: #007bff;
-    --font-family: Arial, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-    /* Define dark mode colors based on user preference */
-    :root {
-        --background-color: #121212;
-        --text-color: #ffffff;
-        --link-color: #4da3ff;
-    }
+  /* Define default light mode colors */
+  /* --background-color: #ffffff; */
+  --background-color: #851a17;
+  --text-color: #ffffff;
+  --link-color: #fedda7;
+  --font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    font-family: var(--font-family); /* Use defined font family */
-    line-height: 1.6; /* Improve readability with increased line height */
-    background-color: var(--background-color); /* Set background color based on theme */
-    color: var(--text-color); /* Set text color based on theme */
-    margin: 0; /* Remove default margin */
-    padding: 1rem; /* Add padding around content */
-    font-size: 1rem; /* Set base font size */
+  font-family: var(--font-family); /* Use defined font family */
+  line-height: 1.6; /* Improve readability with increased line height */
+  background-color: var(--background-color); /* Set background color based on theme */
+  color: var(--text-color); /* Set text color based on theme */
+  margin: 0 auto; /* Remove default margin */
+  padding: 0 1rem; /* Add padding around content */
+  font-size: 1rem; /* Set base font size */
+  max-width: 960px;
 }
 
 header nav ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0; /* Remove default padding */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack navigation items vertically */
-    gap: 0.5rem; /* Add spacing between items */
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack navigation items vertically */
+  gap: 0.5rem; /* Add spacing between items */
 }
 
-header nav ul li a {
-    color: var(--link-color); /* Set link color based on theme */
-    text-decoration: none; /* Remove underline from links */
-    font-size: 1.2rem; /* Increase font size for better readability */
-    padding: 0.5rem; /* Add padding for better clickability */
+a {
+  color: var(--link-color); /* Set link color based on theme */
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header nav ul li a,
+header nav ul li strong {
+  color: var(--link-color); /* Set link color based on theme */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 1.2rem; /* Increase font size for better readability */
+  padding: 0.5rem; /* Add padding for better clickability */
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header nav ul li strong {
+  color: #fff;
 }
 
 h1, h2 {
-    font-weight: bold; /* Make headings bold */
+  font-weight: bold; /* Make headings bold */
+  color: #fedda7;
 }
 
 p {
-    max-width: 75ch; /* Limit paragraph width for readability */
+  max-width: 74ch; /* Limit paragraph width for readability */
 }
 
 img {
-    max-width: 100%; /* Ensure images are responsive */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove inline spacing issues */
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove inline spacing issues */
 }
 
 footer {
-    margin-top: 2rem; /* Add space above footer */
-    text-align: center; /* Center-align footer text */
-    font-size: 0.9rem; /* Reduce font size for footer */
+  margin-top: 1rem; /* Add space above footer */
 }
+
+footer p {
+  text-align: center; /* Center-align footer text */
+  font-size: 0.9rem; /* Reduce font size for footer */
+
+}
+
+#contact-form {
+  text-align: left;
+}
+
+#contact-form iframe {
+  position: relative;
+  left: -1em;
+  width: 99%;
+  max-width: 74ch;
+  min-width: 375px;
+  min-height: 620px;
+}
+
+#rtg {
+  /* display: inline-block; */
+  margin-right: 1em;
+}
+
+#footer-text {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  display: grid;
+  grid-template-rows: auto auto;
+  /* grid-template-columns: 200px 1fr; */
+  grid-template-columns: 1fr 2fr;
+  /* gap: 10px; */
+}
+
+#main-nav {
+  grid-row: 3;
+  grid-column: span 2;
+}
+
+#main-heading {
+  grid-column: 1;
+  grid-row: 1;
+
+  text-indent: -100em;
+  background-image: url(images/logo.gif);
+  background-repeat: no-repeat;
+  background-position: -5px center;
+  width: 200px;
+  height: 83px;
+  margin: 0;
+  padding: 0;
+}
+
+#sub-heading {
+  grid-row: 2;
+  grid-column: 1;
+  text-indent: -100em;
+  background-image: url(images/logo2.gif);
+  background-repeat: no-repeat;
+  background-position: -110px center;
+  width: 380px;
+  height: 83px;
+  margin: 0;
+  padding: 0;
+  /* border-bottom: solid 2px green; */
+}
+
+#main-heading a {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+p {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, transparent 60%, var(--background-color) 100%),
+              no-repeat url(images/welcome1.jpg);
+  background-position: top left;
+  min-height: 16em;
+}
+
+section {
+  padding: 1em 0 1px 1em; /* 1px fixes bottom padding */
+  background: linear-gradient(to right, rgba(7,7,7, 0.3) 50%, transparent 65%);
+}
+
+#about-page main {
+  background: linear-gradient(to right, transparent 60%, var(--background-color) 100%),
+              no-repeat url(images/about1.jpg);
+}
+
+#styles-page main {
+  background: linear-gradient(to right, transparent 60%, var(--background-color) 100%),
+              no-repeat url(images/styles1.jpg);
+  background-repeat: ;
+}
+
+#graded-examination-page main {
+  background: linear-gradient(to right, transparent 60%, var(--background-color) 100%),
+              no-repeat url(images/exams1.jpg);
+}
+
+#contact-page main {
+  background: linear-gradient(to right, transparent 60%, var(--background-color) 100%),
+              no-repeat url(images/contact1.jpg);
+}
+
+#about-page section,
+#styles-page section,
+#contact-page section {
+  background: linear-gradient(to right, rgba(5,5,5, 0.6) 50%, transparent 65%);
+}
+
+#cta {
+  padding: 1em;
+  margin-top: 1em;
+}
+
+#cta a {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+/* Example 1: Rounded Button */
+.cta-button {
+  background-color: #fedda7;
+  color: #851a17;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 20px;
+  border: 2px solid #851a17;
+  border-radius: 12px;
+  /* text-transform: uppercase; */
+  /* cursor: pointer; */
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #fcca60;
+  color: #700f0d;
+}
+
+.cta-button:active {
+  position:relative;
+  top: 1px;
+  background-color: #fcca60;
+  color: #700f0d;
+}
+
+/* Example 2: Glassmorphism Button */
+.glass-button {
+  background: rgba(254, 221, 167, 0.2);
+  color: #fedda7;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: 1px solid rgba(254, 221, 167, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  /* text-transform: uppercase; */
+  /* cursor: pointer; */
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-button:hover {
+  background: rgba(254, 221, 167, 0.4);
+}
+
+/* Example 3: 3D Effect Button */
+.three-d-button {
+  background-color: #fedda7;
+  color: #851a17;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 6px;
+  /* text-transform: uppercase; */
+  /* cursor: pointer; */
+  box-shadow: 0 6px #700f0d;
+  transition: all 0.2s ease-in-out;
+}
+
+.three-d-button:active {
+  box-shadow: 0 3px #700f0d;
+  transform: translateY(3px);
+}
+
+.reviews-button {
+  background: radial-gradient(rgba(254, 221, 167, 0.75), transparent);
+  color: #851a17;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+
+.reviews-button:hover {
+  color: #700f0d;
+}
+
+.reviews-button:active {
+  position:relative;
+  top: 1px;
+  color: #700f0d;
+}
+
 
 /* Tablet View */
 @media (min-width: 600px) {
-    header nav ul {
-        flex-direction: row; /* Arrange navigation items in a row */
-        justify-content: space-around; /* Distribute items evenly */
-    }
+  body {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  header nav ul {
+    flex-direction: row; /* Arrange navigation items in a row */
+    justify-content: space-around; /* Distribute items evenly */
+    max-width: 740px;
+  }
+
+  #sub-heading {
+    grid-row: 1;
+    grid-column: 2;
+    /* grid-row: 2; */
+    /* grid-column: 1; */
+  }
+
+  main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 65%),
+                no-repeat url(images/welcome1.jpg);
+  }
+
+  #about-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 65%),
+                no-repeat url(images/about1.jpg);
+  }
+
+  #styles-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 65%),
+                no-repeat url(images/styles1.jpg);
+  }
+
+  #graded-examination-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 65%),
+                no-repeat url(images/exams1.jpg);
+  }
+
+  #contact-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 65%),
+                no-repeat url(images/contact1.jpg);
+  }
+
+  /* #main-nav { */
+  /*   grid-row: 3; */
+  /*   /\* grid-column: span 1; *\/ */
+  /* } */
+
 }
 
 /* Desktop View */
-@media (min-width: 1024px) {
-    body {
-        padding: 2rem; /* Increase padding for larger screens */
-        font-size: 1.1rem; /* Increase font size for better readability */
-    }
-    header nav ul {
-        justify-content: center; /* Center navigation items */
-      /* justify-content: left; */
-      max-width: 1440px;
-        gap: 1rem; /* Increase spacing between navigation items */
-    }
+@media (min-width: 960px) {
+  body {
+    padding: 1em 2rem; /* Increase padding for larger screens */
+    font-size: 1.1rem; /* Increase font size for better readability */
+  }
+
+  header nav ul {
+    /* justify-content: center; /\* Center navigation items *\/ */
+    justify-content: left;
+    max-width: 1024px;
+    gap: 1rem; /* Increase spacing between navigation items */
+  }
+
+  #sub-heading {
+  }
+
+  main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 62%),
+                no-repeat url(images/welcome1.jpg);
+  }
+
+  #about-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 62%),
+                no-repeat url(images/about1.jpg);
+  }
+
+  #styles-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 62%),
+                no-repeat url(images/styles1.jpg);
+  }
+
+  #graded-examination-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 62%),
+                no-repeat url(images/exams1.jpg);
+  }
+
+  #contact-page main {
+    background: linear-gradient(to right, transparent 40%, var(--background-color) 62%),
+                no-repeat url(images/contact1.jpg);
+  }
 }
