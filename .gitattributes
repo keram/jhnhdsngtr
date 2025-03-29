@@ -1,0 +1,4 @@
+bb.edn export-ignore
+serve.sh export-ignore
+.gitattributes export-ignore
+README.md export-ignore
